@@ -1,9 +1,12 @@
-set(THIS TestApp)
+cmake_minimum_required(VERSION 3.9)
 
-set(SOURCE Source/main.cpp)
+project(TestApp VERSION 0.0.1 LANGUAGES CXX)
 
-set (CMAKE_CXX_STANDARD 17)
+include_directories(
+	${CMAKE_CURRENT_SOURCE_DIR}
+	${CMAKE_CURRENT_BINARY_DIR}
+        ../Bitmap/Include)
 
-add_executable(${THIS} ${SOURCE})
+add_executable(TestApp Source/main.cpp)
 
-target_include_directories(${THIS} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Include)
+target_link_libraries(TestApp Bitmap)
