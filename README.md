@@ -1,1 +1,1 @@
-"# cpp-simple-graphic-creator" 
+# simple-graphic-creator
