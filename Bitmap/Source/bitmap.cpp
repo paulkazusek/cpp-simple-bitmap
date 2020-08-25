@@ -26,18 +26,24 @@ Bitmap::Bitmap( uint32_t width, uint32_t height, bool hasAlpha )
 	bitmapFileHeader.dataOffset = sizeof( BitmapFileHeader ) + sizeof( BitmapInformationHeader );
 
 	data = std::unique_ptr<BRGA32[]>( new BRGA32[width * height] );
+
 }
 
 Bitmap::~Bitmap()
 {
 }
 
-void Bitmap::save( const std::string &fileName )
+void Bitmap::save( const std::string &filename )
 {
-	std::ofstream stream( fileName.c_str(), std::ios::binary );
+	if( filename.empty() )
+	{
+		throw new std::invalid_argument( "filename is empty." );
+	}
+
+	std::ofstream stream( filename.c_str(), std::ios::binary );
 	if( !stream )
 	{
-		throw std::runtime_error( "Bitmap::save(): Could not open file " + fileName + " for writing!" );
+		throw std::runtime_error( "Bitmap::save(): Could not open file " + filename + " for writing!" );
 	}
 
 	//save all header and bitmap information into file

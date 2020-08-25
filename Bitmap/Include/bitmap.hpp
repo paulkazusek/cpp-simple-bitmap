@@ -27,7 +27,7 @@ public:
 	Bitmap( uint32_t width, uint32_t height, bool hasAlpha = true );
 	~Bitmap();
 
-	void save( const std::string& fileName );
+	void save( const std::string& filename );
 	void setPixel( uint32_t x, uint32_t y, uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha );
 	void setPixel( uint32_t x, uint32_t y, Color color );
 	// TODO: void setPixel( Point point, Color color );
