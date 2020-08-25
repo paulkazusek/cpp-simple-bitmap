@@ -39,11 +39,11 @@ void Bitmap::save( const std::string &fileName )
 	{
 		throw std::runtime_error( "Bitmap::save(): Could not open file " + fileName + " for writing!" );
 	}
-	
+
 	//save all header and bitmap information into file
-	stream.write( ( const char* ) &bitmapFileHeader, sizeof( bitmapFileHeader ) );
-	stream.write( ( const char* ) &bitmapInformationHeader, sizeof( bitmapInformationHeader ) );
-	stream.write( ( const char* ) data.get(), ( bitmapInformationHeader.width * bitmapInformationHeader.height * 4 ) );
+	stream.write( reinterpret_cast< const char* >( &bitmapFileHeader ), sizeof( bitmapFileHeader ) );
+	stream.write( reinterpret_cast< const char* >( &bitmapInformationHeader ), sizeof( bitmapInformationHeader ) );
+	stream.write( reinterpret_cast< const char* >( data.get() ), ( bitmapInformationHeader.width * bitmapInformationHeader.height * sizeof( BRGA32 ) ) );
 	stream.close();
 }
 
