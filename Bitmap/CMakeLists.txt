@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.10)
 
 project(Bitmap VERSION 0.0.0 DESCRIPTION "simple lib to create bitmaps" LANGUAGES CXX)
 
@@ -15,6 +15,11 @@ INCLUDE_DIRECTORIES(
 	./Include
 )
 
-set (CMAKE_CXX_STANDARD 17)
-
 add_library(Bitmap STATIC ${SOURCES} ${HEADERS})
+
+# Enabling C++17
+set_target_properties(Bitmap PROPERTIES
+    CXX_STANDARD 17
+    CXX_STANDARD_REQUIRED YES
+    CXX_EXTENSIONS NO
+)
