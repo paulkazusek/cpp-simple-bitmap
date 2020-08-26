@@ -47,6 +47,4 @@ private:
 	Value value;
 };
 
-//constexpr Color blue( 0xFF, 0x00, 0x00, 0xFF );
-
 #endif // PIXEL_FORMAT_HPP
