@@ -12,22 +12,22 @@ private:
 public:
 	constexpr Color( uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue ) : alpha( alpha ), red( red ), green( green ), blue( blue ) {}
 
-	uint8_t A() const
+	constexpr uint8_t A() const
 	{
 		return alpha;
 	}
 
-	uint8_t R() const
+	constexpr uint8_t R() const
 	{
 		return red;
 	}
 
-	uint8_t G() const
+	constexpr uint8_t G() const
 	{
 		return green;
 	}
 
-	uint8_t B() const
+	constexpr uint8_t B() const
 	{
 		return blue;
 	}
