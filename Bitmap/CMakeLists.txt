@@ -10,7 +10,8 @@ set(HEADERS Include/bitmap.hpp
             Include/bitmap_file_header.hpp
             Include/bitmap_information_header.hpp
             Include/color.hpp
-            Include/pixel_format.hpp)
+            Include/pixel_format.hpp
+            Include/point.hpp)
 
 INCLUDE_DIRECTORIES(
 	./Include
